@@ -1,0 +1,42 @@
+my-vue-app/
+│
+├── public/                   # Static assets
+│   └── favicon.ico
+│
+├── src/
+│   ├── assets/              # Images, fonts, etc.
+│   │   └── logo.png
+│   │
+│   ├── components/          # Reusable UI components
+│   │   └── BaseButton.vue
+│   │
+│   ├── views/               # Pages used in router
+│   │   └── HomeView.vue
+│   │   └── AboutView.vue
+│   │
+│   ├── layouts/             # Layout wrappers (optional)
+│   │   └── DefaultLayout.vue
+│   │
+│   ├── router/              # Vue Router setup
+│   │   └── index.js
+│   │
+│   ├── store/               # Pinia or Vuex store
+│   │   └── index.js
+│   │   └── user.js
+│   │
+│   ├── composables/         # Reusable logic (hooks)
+│   │   └── useAuth.js
+│   │
+│   ├── services/            # API calls
+│   │   └── api.js
+│   │
+│   ├── utils/               # Helper functions
+│   │   └── formatDate.js
+│   │
+│   ├── App.vue              # Root component
+│   └── main.js              # App entry point
+│
+├── .env                     # Environment variables
+├── vite.config.js           # Vite config (or vue.config.js for Vue CLI)
+├── package.json
+└── README.md

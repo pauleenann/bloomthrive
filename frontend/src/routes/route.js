@@ -1,0 +1,23 @@
+import {createMemoryHistory, createRouter} from 'vue-router'
+
+import AboutUsView from '@/views/AboutUsView.vue'
+import BlogView from '@/views/BlogView.vue'
+import ContactView from '@/views/ContactView.vue'
+import HomeView from '@/views/HomeView.vue'
+import ShopView from '@/views/ShopView.vue'
+
+
+const routes = [
+    { path:'/', component: HomeView},
+    { path:'/about', component: AboutUsView},
+    { path:'/blog', component: BlogView},
+    { path:'/contact', component: ContactView},
+    { path:'/shop', component: ShopView}
+]
+
+const router = createRouter({
+    history: createMemoryHistory(),
+    routes,
+})
+
+export default router
