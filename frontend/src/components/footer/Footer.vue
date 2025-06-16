@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <div class="h-auto">
+    <footer class="h-auto">
         <div class="h-auto bg-[#132A13] flex flex-col items-center justify-center gap-8 p-10 md:p-20">
             <div class="md:w-5/6 h-auto flex flex-wrap gap-4 md:gap-0 justify-between">
                 <!-- logo, short description. social links -->
@@ -52,8 +52,10 @@
                 </div>
             </div>
         </div>
-        <div class="bg-[#102110] h-10 w-full"></div> 
-    </div>
+        <div class="bg-[#102110] h-10 w-full flex items-center justify-center text-white text-xs">
+            Copyright © 2025 Bloom & Thrive
+        </div> 
+    </footer>
     
 </template>
 

@@ -7,13 +7,13 @@
 </script>
 
 <template>
-    <div class="">
+    <main class="overflow-hidden">
         <Hero/>
         <About/>
         <Featured/>
         <Testimonials/>
         <Footer/>
-    </div>
+    </main>
 </template>
 
 <style scoped>

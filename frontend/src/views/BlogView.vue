@@ -1,9 +1,15 @@
 <script setup>
-
+import Blog from '@/components/blog/Blog.vue';
+import PlantGuide from '@/components/blog/PlantGuide.vue';
+import Video from '@/components/blog/Video.vue';
 </script>
 
 <template>
-    <h1>BLOG</h1>
+    <main>
+        <Blog/>
+        <PlantGuide/> 
+        <Video/>
+    </main>
 </template>
 
 <style scoped>

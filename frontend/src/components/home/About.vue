@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="md:h-screen py-10 md:p-0 bg-white flex items-center justify-center">
+    <section class="md:h-screen py-10 md:p-0 bg-white flex items-center justify-center">
         <div class="w-5/6 h-[80%] m-auto grid md:grid-cols-2 gap-3 md:gap-0">
             <div class="flex items-center justify-center">
               <img :src="img" class="h-130" alt="">  
@@ -15,7 +15,7 @@
             </div>
             
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>

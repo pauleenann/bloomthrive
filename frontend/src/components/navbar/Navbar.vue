@@ -2,7 +2,11 @@
     import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
     import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
     import logo from '../../assets/image/logo1.png'
-    import { RouterLink } from 'vue-router'
+    import logo3 from '../../assets/image/logo3.PNG'
+    import { RouterLink, useRoute } from 'vue-router'
+    
+    const route = useRoute();
+    let currentPath = route.path;
   
     const navigation = [
         { name: 'Home', href: '/'},
@@ -11,11 +15,21 @@
         { name: 'About Us', href: '/about-us' },
         { name: 'Contact', href: '/contact' },
     ]
+
+    // pages with white text
+    const pages = [
+      '/',
+      '/about-us',
+      '/blog',
+      '/contact'
+    ]
+
+    console.log(currentPath)
 </script>
 
 
 <template>
-    <Disclosure as="nav" class="w-5/6 m-auto relative top-10 z-30" v-slot="{ open }">
+    <Disclosure as="nav" class="w-5/6 absolute top-15 z-30" v-slot="{ open }">
       <div class="">
         <div class="relative flex h-16 items-center justify-between">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -27,22 +41,23 @@
               <XMarkIcon v-else class="block size-6" aria-hidden="true" />
             </DisclosureButton>
           </div>
-          <div class="flex flex-1 items-center sm:justify-between">
+          <div class="flex w-full items-center justify-between">
             <div class="flex flex-1 items-center justify-center sm:flex-none sm:justify-start">
-                <img class="h-15 w-auto" :src="logo" alt="Your Company" />
+                <img v-if="pages.includes(currentPath)" class="h-15 w-30" :src="logo" alt="Your Company" />
+                <img v-else class="h-13 w-30" :src="logo3" alt="Your Company" />
             </div>
-            <div class="hidden sm:ml-6 sm:block">
-              <div class="flex space-x-4">
-                <RouterLink v-for="item in navigation" :key="item.name" :to="item.href" :class="[item.current ? ' text-white' : 'text-white  hover:text-white', 'rounded-md px-3 py-2 text-md']">{{ item.name }}</RouterLink>
+            <div class="hidden sm:block">
+              <div class="flex justify-between gap-8">
+                <RouterLink v-for ="item in navigation" :key="item.name" :to="item.href" :class="[pages.includes(currentPath)? ' text-white' : 'text-[#4F772D]', 'rounded-md text-md']">{{ item.name }}</RouterLink>
               </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center gap-2 sm:static ">
-                <button type="button" class="relative text-white">
-                  <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="text-xl" />
+                <button type="button" :class="[pages.includes(currentPage) ? 'text-white': 'text-[#4F772D]', 'relative']">
+                  <font-awesome-icon :icon="['fas', 'magnifying-glass']" :class="[pages.includes(currentPath) ? ' text-white' : 'text-[#4F772D]', 'relative text-xl']" />
                 </button>
 
                 <button type="button" class="relative text-white">
-                  <font-awesome-icon :icon="['fas', 'bag-shopping']" class="text-xl"/>
+                  <font-awesome-icon :icon="['fas', 'bag-shopping']" :class="[pages.includes(currentPath) ? ' text-white' : 'text-[#4F772D]', 'relative text-xl']"/>
                 </button>
     
                 <!-- Profile dropdown -->
@@ -50,7 +65,7 @@
                 <div>
                     <MenuButton class="relative flex text-sm ">
                     
-                    <font-awesome-icon :icon="['fas', 'circle-user']" class="text-2xl text-white"/>
+                    <font-awesome-icon :icon="['fas', 'circle-user']" :class="[pages.includes(currentPath) ? ' text-white' : 'text-[#4F772D]', 'relative text-2xl']"/>
                     </MenuButton>
                 </div>
                 <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
@@ -75,7 +90,9 @@
   
       <DisclosurePanel class="sm:hidden absolute bg-white rounded">
         <div class="space-y-1 px-2 pt-2 pb-3">
-          <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" class="text-sm text-gray-700 block py-1 px-3" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
+          <RouterLink v-for="item in navigation" :key="item.name" as="a" :to="item.href" class="text-sm text-gray-700 block py-1 px-3" :aria-current="item.current ? 'page' : undefined">
+            {{ item.name }}
+          </RouterLink>
         </div>
       </DisclosurePanel>
     </Disclosure>

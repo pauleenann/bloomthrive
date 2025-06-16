@@ -4,17 +4,17 @@
 </script>
 
 <template>
-    <div 
-      class="relative w-full h-screen bg-cover bg-center"
+    <section 
+      class="relative max-w-screen h-screen bg-cover bg-center"
       :style="{ backgroundImage: `url(${img})` }"
     >
       <!-- overlay -->
       <div class="absolute top-0 bottom-0 left-0 right-0 bg-[#4F772D] opacity-70 z-10"></div>
   
-      <!-- navbar -->
-      <div>
+      <div class="w-full flex justify-center">
         <Navbar />
       </div>
+
   
       <!-- hero section -->
     <div class="w-5/6 m-auto absolute top-0 bottom-0 right-0 left-0 flex flex-col items-start justify-center z-20 text-white">
@@ -24,7 +24,7 @@
         </p>
         <button class="bg-[#ECF39E] py-3 px-5 text-xl rounded text-[#132A13] font-semibold">Shop now</button>
       </div>
-    </div>
+    </section>
   </template>
   
 

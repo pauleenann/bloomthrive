@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <div class="md:h-screen py-10 md:py-0 bg-[#F9FDCA] flex flex-col items-center justify-center gap-8 ">
+    <section class="md:h-screen py-10 md:py-0 bg-[#F9FDCA] flex flex-col items-center justify-center gap-8 ">
         <h2 class="text-3xl md:text-5xl text-[#34572C] pacifico">Featured Products</h2>
         <div class="flex flex-col md:flex-row gap-5 w-5/6 items-center md:justify-center">
             <div v-for="(product, index) in products" :key="index">
@@ -24,7 +24,7 @@
         </div>
         <button class="bg-[#132A13] py-3 px-5 rounded text-white">See more</button>
         
-    </div>
+    </section>
 </template>
 
 <style scoped>

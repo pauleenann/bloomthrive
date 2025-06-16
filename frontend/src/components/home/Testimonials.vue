@@ -10,7 +10,7 @@
 </script>
 
 <template>
-    <div class="bg-white flex flex-col items-center justify-center gap-8 py-10 md:p-30">
+    <section class="bg-white flex flex-col items-center justify-center gap-8 py-10 md:p-30">
         <h2 class="source-serif text-3xl md:text-5xl text-[#4F772D] font-semibold">Testimonials</h2>
         <div class="flex flex-col items-center md:flex-row gap-3 w-5/6">
             <!-- testimony -->
@@ -26,7 +26,7 @@
             </div>
         </div>
         
-    </div>
+    </section>
 </template>
 
 <style scoped>
