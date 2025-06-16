@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue';
+import Testimony from './Testimony.vue';
 
     const testimonies = ref([
         { image: '', name: 'Ryan Brooks', description: 'Bloom & Thrive has completely transformed my home into a peaceful, green sanctuary. Their plants are not only beautiful but also come with easy-to-follow care instructions, which is perfect for someone like me who’s new to plant care.'},
@@ -12,17 +13,10 @@
 <template>
     <section class="bg-white flex flex-col items-center justify-center gap-8 py-10 md:p-30">
         <h2 class="source-serif text-3xl md:text-5xl text-[#4F772D] font-semibold">Testimonials</h2>
-        <div class="flex flex-col items-center md:flex-row gap-3 w-5/6">
+        <div class="flex flex-col items-center md:flex-row gap-3 w-5/6 h-3xl">
             <!-- testimony -->
-            <div v-for="(testimony,index) in testimonies" :key="index" class="max-w-md bg-[#ECF39E] p-7 shadow rounded">
-                <!-- user img and name -->
-                <div class="flex items-center gap-2 mb-1">
-                    <img v-if="testimony.image==''" src="" alt="" class="bg-gray-300 h-5 md:h-6 w-5 md:w-6 rounded-4xl">
-                    <img v-else :src="testimony.image" alt="">
-                    <p class="font-semibold text-xs md:text-sm">{{ testimony.name }}</p>
-                </div>
-                <!-- description -->
-                 <p class="text-xs md:text-sm">{{ testimony.description }}</p>
+            <div v-for="(testimony,index) in testimonies" :key="index">
+               <Testimony :testimony="testimony"/>
             </div>
         </div>
         
